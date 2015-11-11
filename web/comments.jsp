@@ -51,7 +51,7 @@
     <input type="submit" value="Input Opinion"/>
 </form>        
         
-<h3 class="footer">Prescription Drug Feedback Database&reg; - 2015</h3>
+<h3 class="footer">Prescription Drug Feedback Database&reg;</h3>
 
 
 </body>  
