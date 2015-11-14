@@ -20,21 +20,22 @@
  
     <sql:query dataSource="${snapshot}" var="result">
         SELECT * FROM comments WHERE drug_id = ?
-        <sql:param value="${param.did}">
-        </sql:param>
+        <sql:param value="${param.did}"></sql:param>
     </sql:query>
  
     <table border="1" width="100%">
     <tr>
-        <th>id</th>
-        <th>drug_id</th>
-        <th>opinion</th>
+        <th>comment id</th>
+        <th>drug id</th>
+        <th>comments</th>
+        <th>date</th>
     </tr>
 <c:forEach var="row" items="${result.rows}">
 <tr>
    <td><c:out value="${row.id}"/></td>
    <td><c:out value="${row.drug_id}"/></td>
    <td><c:out value="${row.opinion}"/></td>
+   <td><c:out value="${row.date}"/></td>
 </tr>
 </c:forEach>
 </table>
@@ -48,7 +49,7 @@
     <input type="hidden" name="did" value=<%= did %> />
     <textarea name="content" cols="80" rows="8">
     </textarea>
-    <input type="submit" value="Input Opinion"/>
+    <input type="submit" value="Enter Comment"/>
 </form>        
         
 <h3 class="footer">Prescription Drug Feedback Database&reg;</h3>
