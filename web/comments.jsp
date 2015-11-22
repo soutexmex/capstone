@@ -1,6 +1,6 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
 
+<%@page contentType="text/html" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -34,7 +34,7 @@
 <tr>
    <td><c:out value="${row.id}"/></td>
    <td><c:out value="${row.drug_id}"/></td>
-   <td><c:out value="${row.opinion}"/></td>
+   <td><c:out value="${row.opinion}" escapeXml="true" /></td>
    <td><c:out value="${row.date}"/></td>
 </tr>
 </c:forEach>
