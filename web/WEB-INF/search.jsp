@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -8,7 +8,7 @@
 
 <html>
     <head>
-    <title>Posted Comments</title>
+    <title>Search</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/main.css"/>
@@ -25,37 +25,25 @@
     </div>
     <div>
         <a href=" "><img class="displayed" src="images/Rx.png" alt="Rx emblem"></a>
-        <h3 class="header">YOUR COMMENT HAS POSTED SUCCESSFULLY</h3>
+        <h3 class="header">SEARCH RESULTS</h3>
     </div> 
+    
+    <body>
+        <h3>you searched for: <c:out value="${search}"/></h3>
         
-    <b>your comment:</b>
-    
-    <%! String opinion = ""; %>
-    <% opinion = request.getParameter("content"); %>
-    <%= opinion %>
-    
-    
-   
-    
-    <br />
-    <br />
-    
-    
-
     <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
      url="jdbc:mysql://localhost/pharm"
      user="root"  password="Sierra01"/>
- 
-    <sql:update dataSource="${snapshot}" var="result">
-        INSERT INTO comments VALUES (NULL, ?, ?, ?);
-        <sql:param value="${param.did}" />
-        <sql:param value="${param.content}" />
-        <sql:param value="${param.date}" />
-    </sql:update>
        
+    <sql:query dataSource="${snapshot}" var="result">
+        SELECT * FROM drugs where name = ?
+        <sql:param value="${search}"></sql:param>
+    </sql:query>
         
-       
-   
+    <c:forEach var="row" items="${result.rows}">
+        <h2><a href="comments?did=${row.id}&image_file=${row.image}"> ${row.name} </a></h2> </br>
+    </c:forEach>   
+    
     
     </body>
         </br>
