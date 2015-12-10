@@ -25,7 +25,7 @@
         <input type="text" name="search" size="40" placeholder="search database here"><input type="submit" form="nameform" value="search"/></form>
     </div>
     <div>
-        <a href=" "><img class="displayed" src="images/Rx.png" alt="Rx emblem"></a>
+        <a href="home.jsp"><img class="displayed" src="images/Rx.png" alt="Rx emblem"></a>
         <h3 class="header">Comments</h3>
     </div>
     
@@ -37,8 +37,7 @@
     <h2><IMG SRC="images/<%= file_name %>"><IMG SRC="images/<%= file_name %>"><IMG SRC="images/<%= file_name %>"></h2>
            
     <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://localhost/pharm"
-     user="root"  password="Sierra01"/>
+     url="jdbc:mysql://localhost/pharm" user="root"  password="Sierra01" />
  
     <sql:query dataSource="${snapshot}" var="result">
         SELECT * FROM comments WHERE drug_id = ?
