@@ -23,7 +23,7 @@
         <input type="text" name="search" size="40" placeholder="search database here"><input type="submit" form="nameform" value="search"/></form>
     </div>
     <div>
-        <a href=" "><img class="displayed" src="images/Rx.png" alt="Rx emblem"></a>
+        <a href="home.jsp"><img class="displayed" src="images/Rx.png" alt="Rx emblem"></a>
         <h3 class="header">Database listings</h3>
     </div>
 <head>
