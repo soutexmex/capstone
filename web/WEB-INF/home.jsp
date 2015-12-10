@@ -29,7 +29,7 @@
         <form action="/TEST/search" method="post">
         <input type="text" name="search" size="40" placeholder="search database here"><input type="submit" form="nameform" value="search"/></form>
         </div>
-        <a href=" "><img class="displayed" src="images/Rx.png" alt="Rx emblem"></a>
+        <a href="home.jsp"><img class="displayed" src="images/Rx.png" alt="Rx emblem"></a>
         <h3 class="header">Prescription Drug Feedback Database&reg;</h3>
         <div>
             <P class="blocktext">The Internet's only prescription drug feedback website. <b>ANONYMOUSLY</b> 
